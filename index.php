@@ -25,33 +25,28 @@
 </head>
 
 <body>
-
+    <div class="d-flex justify-content-center">
+        <h1 class="mb-5 mt-5 font-weight-bold text-dark text-center">Lista Cadastro</h1>
+    </div>
     <div class="wrapper">
-
-
         <!-- Page Content  -->
         <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-info">
-                <div class="container-fluid">
-
-                    <h4 class="m-0 font-weight-bold text-dark">Lista de Cadastro</h4>
-
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-
-
-                </div>
-            </nav>
-
-
             <div class="container-fluid">
-
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary"><a href="cadastroContato.php"><button type="button" class="btn btn-info">Adicionar</button></a></h6>
+                        <div class="d-flex bd-highlight mb-3">
+                            <div class=" mt-2 p-2 bd-highlight">
+                                <button class="btn btn-info">
+                                    <a href="cadastroContato.php">Adicionar</a>
+                                </button>
+                            </div>
+                            <div class="mt-2 ml-auto p-2 bd-highlight">
+                                <button class="btn btn-danger">
+                                    <a>Gerar PDF</a>
+                                </button>
+                            </div>               
+                        </div>                       
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -95,7 +90,11 @@
             </div>
         </div>
     </div>
-
+    <footer>
+        <div class="copyright py-4 text-center text-dark ">
+            <div class="container"><small>Copyright &copy; Código da Nathi 2023</small></div>
+        </div>
+    </footer>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->

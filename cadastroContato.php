@@ -31,24 +31,9 @@
 
         <!-- Page Content  -->
         <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-info">
-                <div class="container-fluid">
-
-                    <h4 class="m-0 font-weight-bold text-dark text-center">Cadastro Contato</h4>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-warning btn-sm"><a href="index.php">Voltar</a></button>
-                            </li>
-                        </ul>
-                    </div>
-
-
-                </div>
-            </nav>
-
+            <div class="d-flex justify-content-center">
+                <h4 class="mb-3 font-weight-bold text-dark text-center">Cadastro Contato</h4>
+            </div>
             <div>
                 <div class="wrapper wrapper--w680">
                     <div class="card card-4">
@@ -95,12 +80,15 @@
                                         <label for="inputState">Bloco</label>
                                         <select id="inputState" class="form-control">
                                             <option selected></option>
-                                            <option>1</option>
-                                            <option>2</option>
+                                            <option name = "bloco">1</option>
+                                            <option name = "bloco">2</option>
                                         </select>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                <div class="d-flex bd-highlight mb-3">
+                                    <div class=" mt-2 p-2 bd-highlight"><button type="submit" class="btn btn-primary">Cadastrar</button></div>
+                                    <div class="mt-2 ml-auto p-2 bd-highlight"><button type="button" class="btn btn-warning btn-sm justify-content-end"><a href="index.php">Voltar</a></button></div>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -108,8 +96,11 @@
             </div>
         </div>
     </div>
-
-
+    <footer>
+        <div class="copyright py-4 text-center text-dark ">
+            <div class="container"><small>Copyright &copy; Código da Nathi 2023</small></div>
+        </div>
+    </footer>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->

@@ -32,13 +32,14 @@
         <!-- Page Content  -->
         <div id="content">
             <div class="d-flex justify-content-center">
-                <h4 class="mb-3 font-weight-bold text-dark text-center">Cadastro Contato</h4>
+                <h1 class="mb-3 font-weight-bold text-dark text-center">Cadastro Contato</h1>
             </div>
             <div>
                 <div class="wrapper wrapper--w680">
                     <div class="card card-4">
                         <div class="card-body">
-                            <h2 class="title">Cadastro</h2>
+                            <h2 class="title mb-2">Formulário</h2>
+                            <hr class="mb-2">
                             <?php
                             //Se o name existe e o botão cadastrar foi acionado, então as informações vão ser recolhidas
                             if (isset($_POST['nome'])) {

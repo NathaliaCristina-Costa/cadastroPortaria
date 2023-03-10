@@ -18,7 +18,7 @@
         public function buscarDados(){
 
             $res = array();
-            $cmd = $this->pdo->query("SELECT * FROM contato ORDER BY idContato");
+            $cmd = $this->pdo->query(" SELECT `idContato`,`nome` ,`empresa`,`identificacao`,`apartamento`,`bloco`,DATE_FORMAT(`data_cadastro`, '%d%/%m/%Y - %h:%i:%s') as data_formatada FROM contato ORDER BY idContato");
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
@@ -31,7 +31,7 @@
             $cmd->bindValue(":e", $empresa);
             $cmd->bindValue(":i", $identificacao);
             $cmd->bindValue(":a", $apartamento);
-            $cmd->bindValue(":b", $bloco);
+            $cmd->bindValue(":b", $apartamento);
                 
             $cmd->execute();
                 

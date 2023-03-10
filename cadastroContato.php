@@ -68,7 +68,15 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-8">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">Documento</label>
+                                        <select id="inputState" class="form-control" name = "bloco">
+                                            <option selected>CPF</option>
+                                            <option>Matrícula</option>
+                                            <option>RG</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
                                         <label for="identificacao">RG / CPF/ MATRÍCULA</label>
                                         <input type="text" class="form-control" id="identificacao" name = "identificacao">
                                     </div>
@@ -78,16 +86,24 @@
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="inputState">Bloco</label>
-                                        <select id="inputState" class="form-control">
+                                        <select id="inputState" class="form-control" name = "bloco">
                                             <option selected></option>
-                                            <option name = "bloco">1</option>
-                                            <option name = "bloco">2</option>
+                                            <option>1</option>
+                                            <option>2</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="d-flex bd-highlight mb-3">
-                                    <div class=" mt-2 p-2 bd-highlight"><button type="submit" class="btn btn-primary">Cadastrar</button></div>
-                                    <div class="mt-2 ml-auto p-2 bd-highlight"><button type="button" class="btn btn-warning btn-sm justify-content-end"><a href="index.php">Voltar</a></button></div>
+                                    <div class=" mt-2 p-2 bd-highlight">
+                                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                                    </div>
+                                    <div class="mt-2 ml-auto p-2 bd-highlight">
+                                        <a href="index.php">
+                                            <button type="button" class="btn btn-info btn-sm justify-content-end">
+                                                Voltar
+                                            </button>
+                                        </a>
+                                    </div>
                                 </div>
                             </form>
                         </div>

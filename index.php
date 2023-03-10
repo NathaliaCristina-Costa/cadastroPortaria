@@ -37,20 +37,20 @@
                     <div class="card-header py-3">
                         <div class="d-flex bd-highlight mb-3">
                             <div class=" mt-2 p-2 bd-highlight">
-                                <button class="btn btn-info">
-                                    <a href="cadastroContato.php">Adicionar</a>
-                                </button>
+                                <a href="cadastroContato.php">
+                                    <button class="btn btn-dark">Adicionar</button>
+                                </a>
                             </div>
                             <div class="mt-2 ml-auto p-2 bd-highlight">
-                                <button class="btn btn-danger">
-                                    <a>Gerar PDF</a>
-                                </button>
+                                <a href="gerarPDF.php">
+                                    <button class="btn btn-danger">Gerar PDF</button>
+                                </a>
                             </div>               
                         </div>                       
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table table-bordered" id="dataTable" width="110%" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th>Nome</th>
@@ -58,7 +58,7 @@
                                         <th>Identificação</th>
                                         <th>Apartamento</th>
                                         <th>Bloco</th>
-                                        <th>Data / Hora Cadastro</th>
+                                        <th>Data / Hora </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -105,9 +105,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#sidebarCollapse').on('click', function() {
-                $('#sidebar').toggleClass('active');
-            });
+            
             $(document).ready(function() {
                 $('#dataTable').DataTable();
             });

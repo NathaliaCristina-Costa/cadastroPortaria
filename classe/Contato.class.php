@@ -31,7 +31,7 @@
             $cmd->bindValue(":e", $empresa);
             $cmd->bindValue(":i", $identificacao);
             $cmd->bindValue(":a", $apartamento);
-            $cmd->bindValue(":b", $apartamento);
+            $cmd->bindValue(":b", $bloco);
                 
             $cmd->execute();
                 

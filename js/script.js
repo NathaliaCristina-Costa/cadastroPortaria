@@ -1,25 +1,16 @@
 $(document).ready(function() {
     $('#dataTable').DataTable();
 
-    $('#rg').hide();
-    $('#cpf').hide();
-    $('#matricula').hide();
-
+ 
     $('#documento').change(function(){
         var valorEscolhido = $('#documento option:selected').text();
 
         if(valorEscolhido == 'RG'){
-            $('#rg').show();
-            $('#cpf').hide();
-            $('#matricula').hide();
+            $('#identificacao').mask('00.000.000-0');
         }else if(valorEscolhido == 'CPF'){
-            $('#rg').hide();
-            $('#cpf').show();
-            $('#matricula').hide();
+            $('#identificacao').mask('000.000.000-00');
         }else{
-            $('#rg').hide();
-            $('#cpf').hide();
-            $('#matricula').show();
+            $('#identificacao').mask('000.000.000');
         }
     });
 

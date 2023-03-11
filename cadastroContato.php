@@ -71,7 +71,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-3">
                                         <label for="inputState">Documento</label>
-                                        <select id="documento" class="form-control" name = "bloco">
+                                        <select id="documento" class="form-control">
                                             <option></option>
                                             <option >CPF</option>
                                             <option>Matrícula</option>
@@ -79,16 +79,8 @@
                                         </select>
                                     </div>
                                     <div id="rg" class="form-group col-md-4">
-                                        <label for="rg">RG</label>
-                                        <input type="text" class="form-control" id="rg" name = "identificacao">
-                                    </div>
-                                    <div id="cpf" class="form-group col-md-4">
-                                        <label for="cpf">CPF</label>
-                                        <input type="text" class="form-control" id="cpf" name = "identificacao">
-                                    </div>
-                                    <div id="matricula" class="form-group col-md-4">
-                                        <label for="matricula">Matrícula</label>
-                                        <input type="text" class="form-control" id="matricula" name = "identificacao">
+                                        <label for="registro">Identificação</label>
+                                        <input type="text" class="form-control" id="identificacao" name = "identificacao">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="inputZip">Apto</label>

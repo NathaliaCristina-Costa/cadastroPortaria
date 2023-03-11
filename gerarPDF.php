@@ -44,5 +44,5 @@
 
     $dompdf->render();
 
-    $dompdf->stream("cadastros.pdf", array("Attachment" => false));
+    $dompdf->stream("cadastros.pdf", array("Attachment" => true));
 ?>

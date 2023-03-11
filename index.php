@@ -28,7 +28,7 @@
 
 <body>
     <div class="d-flex justify-content-center">
-        <h1 class="mb-5 mt-5 font-weight-bold text-dark text-center">Lista Cadastro</h1>
+        <h1 class="mb-5 mt-5 font-weight-bold text-dark text-center">Lista Registros </h1>
     </div>
     <div class="wrapper">
         <!-- Page Content  -->
@@ -57,7 +57,7 @@
                                     <tr>
                                         <th>Nome</th>
                                         <th>Empresa</th>
-                                        <th>Identificação</th>
+                                        <th>Documento</th>
                                         <th>Apartamento</th>
                                         <th>Bloco</th>
                                         <th>Data / Hora </th>

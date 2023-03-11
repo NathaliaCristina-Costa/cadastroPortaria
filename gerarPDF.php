@@ -39,7 +39,7 @@
 
     $dompdf = new DOMPDF();
 
-    $dompdf->loadHtml('<h1 style="text-align: center;"> Lista de Cadastro Portaria</h1>
+    $dompdf->loadHtml('<h1 style="text-align: center;"> Lista de Registros Portaria</h1>
     '. $html .'');
 
     $dompdf->render();

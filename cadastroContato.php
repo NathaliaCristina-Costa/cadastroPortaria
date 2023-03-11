@@ -32,7 +32,7 @@
         <!-- Page Content  -->
         <div id="content">
             <div class="d-flex justify-content-center">
-                <h1 class="mb-3 font-weight-bold text-dark text-center">Cadastro Contato</h1>
+                <h1 class="mb-3 font-weight-bold text-dark text-center">Cadastro Registro</h1>
             </div>
             <div>
                 <div class="wrapper wrapper--w680">
@@ -80,7 +80,7 @@
                                     </div>
                                     <div id="rg" class="form-group col-md-4">
                                         <label for="registro">Identificação</label>
-                                        <input type="text" class="form-control" id="identificacao" name = "identificacao">
+                                        <input type="text" class="form-control" id="identificacao" name = "identificacao" placeholder="Nº do Documento">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="inputZip">Apto</label>
@@ -89,7 +89,7 @@
                                     <div class="form-group col-md-2">
                                         <label for="inputState">Bloco</label>
                                         <select id="inputState" class="form-control" name = "bloco">
-                                            <option selected></option>
+                                            <option selected>...</option>
                                             <option>1</option>
                                             <option>2</option>
                                         </select>
@@ -127,7 +127,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script src="./js/script.js"></script>   
-    <script src="./js/jquery.mask.js"></script>      
+    <script src="./js/jquery.mask.js"></script>    
 </body>
 
 </html>

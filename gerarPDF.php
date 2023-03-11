@@ -12,7 +12,7 @@
 
     $pdo = new PDO('mysql:host=localhost; dbname=agenda', 'root', 'root');
 
-    $sql = $pdo->query(" SELECT `idContato`,`nome` ,`empresa`,`identificacao`,`apartamento`,`bloco`,DATE_FORMAT(`data_cadastro`, '%d%/%m/%Y - %h:%i') as data_formatada FROM contato ORDER BY idContato");
+    $sql = $pdo->query(" SELECT `idContato`,`nome` ,`empresa`,`identificacao`,`apartamento`,`bloco`,DATE_FORMAT(`data_cadastro`, '%d%/%m/%Y - %h:%i') as data_formatada, `saida` FROM contato ORDER BY idContato");
 
     $html = '<table border=1 width=100%>';
         $html .= '<thead>';
@@ -23,6 +23,7 @@
         $html .= '<th>Apartamento</th>';
         $html .= '<th>Bloco</th>';
         $html .= '<th>Data / Hora</th>';
+        $html .= '<th>Saída</th>';
         $html .= '</thead>';
         $html .= '<tbody>';
         while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
@@ -31,7 +32,8 @@
             $html .= '<td>'. $linha['identificacao'] . '</td>';
             $html .= '<td>'. $linha['apartamento'] . '</td>';
             $html .= '<td>'. $linha['bloco'] . '</td>';
-            $html .= '<td>'. $linha['data_formatada'] . '</td></tr>';
+            $html .= '<td>'. $linha['data_formatada'] . '</td>';
+            $html .= '<td>'. $linha['saida'] . '</td></tr>';
             
         }
         $html .= '</tbody>';

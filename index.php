@@ -61,10 +61,12 @@
                                         <th>Apartamento</th>
                                         <th>Bloco</th>
                                         <th>Data / Hora </th>
+                                        <th>Saída</th>
+                                        <th>Adicionar Saída</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
+                                <?php
                                     $dados = $con->buscarDados();
                                     if (count($dados) > 0) {
                                         for ($i = 0; $i < count($dados); $i++) {
@@ -75,7 +77,16 @@
                                                 }
                                             }
                                     ?>
-                                           
+                                            <td>
+                                                
+                                                <div>
+                                                    <a href="horaSaida.php?id=<?php echo $dados[$i]['idContato']; ?>">
+                                                        <button class="btn-sm btn-dark rounded-circle">
+                                                        <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </td>
                                     <?php
                                             echo "</tr>";
                                         }
@@ -103,6 +114,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script src="./js/script.js"></script>    
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

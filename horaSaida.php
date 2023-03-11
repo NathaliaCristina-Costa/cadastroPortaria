@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Lista de Contatos</title >
+    <title>Lista de Contatos</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -32,82 +32,82 @@
         <!-- Page Content  -->
         <div id="content">
             <div class="d-flex justify-content-center">
-                <h1 class="mb-3 font-weight-bold text-dark text-center">Cadastro Registro</h1>
+                <h1 class="mb-3 font-weight-bold text-dark text-center">Registro Saída</h1>
             </div>
             <div>
                 <div class="wrapper wrapper--w680">
+                    <?php
+                        if (isset($_GET['id'])) {
+                            $id = addslashes($_GET['id']);
+                            $res = $con->buscarDadosContato($id);
+                        }
+                    ?>
                     <div class="card card-4">
                         <div class="card-body">
-                            <h2 class="title mb-2">Formulário</h2>
+                            <h2 class="title mb-2">Formulário Saída</h2>
                             <hr class="mb-2">
                             <?php
                             //Se o name existe e o botão cadastrar foi acionado, então as informações vão ser recolhidas
                             if (isset($_POST['nome'])) {
-                                //Função permite bloquear códigos maliciosos que terceiros podem colocar ao registrar informação
-                                $nome = addslashes($_POST['nome']);
-                                $empresa = addslashes($_POST['empresa']);
-                                $identificacao = addslashes($_POST['identificacao']);
-                                $apartamento = addslashes($_POST['apartamento']);
-                                $bloco = addslashes($_POST['bloco']);
-                                $saida = addslashes($_POST['saida']);
+                                if (isset($_GET['id']) && !empty($_GET['id'])) {
+                                    $id = addslashes($_GET['id']);
+                                    $nome = addslashes($_POST['nome']);
+                                    $empresa = addslashes($_POST['empresa']);
+                                    $identificacao = addslashes($_POST['identificacao']);
+                                    $apartamento = addslashes($_POST['apartamento']);
+                                    $bloco = addslashes($_POST['bloco']);
+                                    $saida = addslashes($_POST['saida']);
 
-                                if ($con->cadastrarContato($nome, $empresa, $identificacao, $apartamento, $bloco,$saida) == true) {
-
-                                    header('location: /cadastroPortaria/index.php');
+                                    if ($con->saida($id, $nome, $empresa, $identificacao, $apartamento, $bloco, $saida)) {
+                                        header('location: /cadastroPortaria/index.php');
+                                    }
                                 }
                             }
                             ?>
                             <form method="POST" autocomplete="on">
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" required>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="empresa">Empresa</label>
-                                        <input type="text" class="form-control" id="empresa" name="empresa" required>
+                            <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="inputZip">Saída</label>
+                                        <input type="time" class="form-control" id="inputZip" name="saida" value="<?php if (isset($res)) {echo $res['saida'];} ?>">
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-3">
-                                        <label for="inputState">Documento</label>
-                                        <select id="documento" class="form-control" required>
-                                            <option></option>
-                                            <option >CPF</option>
-                                            <option>Matrícula</option>
-                                            <option>RG</option>
-                                        </select>
+                                    <div class="form-group col-md-6">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" value="<?php if (isset($res)) {echo $res['nome'];} ?>">
                                     </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="empresa">Empresa</label>
+                                        <input type="text" class="form-control" id="empresa" name="empresa" value="<?php if (isset($res)) {echo $res['empresa'];} ?>">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    
                                     <div id="rg" class="form-group col-md-5">
                                         <label for="registro">Identificação</label>
-                                        <input type="text" class="form-control" id="identificacao" name = "identificacao" placeholder="Nº do Documento" required>
+                                        <input type="text" class="form-control" id="identificacao" name = "identificacao" placeholder="Nº do Documento" value="<?php if (isset($res)) {echo $res['identificacao'];} ?>">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="inputZip">Apto</label>
-                                        <input type="text" class="form-control" id="inputZip" name="apartamento" required>
+                                        <input type="text" class="form-control" id="inputZip" name="apartamento" value="<?php if (isset($res)) {echo $res['apartamento'];} ?>">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label for="inputState">Bloco</label>
-                                        <select id="inputState" class="form-control" name = "bloco" required>
-                                            <option selected>...</option>
+                                        <select id="inputState" class="form-control" name = "bloco">
+                                            <option selected><?php if (isset($res)) {echo $res['bloco'];} ?>    </option>
                                             <option>1</option>
                                             <option>2</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputZip">Saída</label>
-                                        <input type="time" class="form-control" id="inputZip" name="saida" disabled>
-                                    </div>
-                                </div>
+                                
                                 <div class="d-flex bd-highlight mb-3">
                                     <div class=" mt-2 p-2 bd-highlight">
-                                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                                        <button type="submit" class="btn btn-warning">Salvar</button>
                                     </div>
                                     <div class="mt-2 ml-auto p-2 bd-highlight">
                                         <a href="index.php">
-                                            <button type="button" class="btn btn-info btn-sm justify-content-end">
+                                            <button type="button" class="btn btn-dark btn-sm justify-content-end">
                                                 Voltar
                                             </button>
                                         </a>

@@ -18,31 +18,28 @@
         public function buscarDados(){
 
             $res = array();
-            $cmd = $this->pdo->query(" SELECT `idContato`,`nome` ,`empresa`,`identificacao`,`apartamento`,`bloco`,DATE_FORMAT(`data_cadastro`, '%d%/%m/%Y - %h:%i') as data_formatada FROM contato ORDER BY idContato");
+            $cmd = $this->pdo->query(" SELECT `idContato`,`nome` ,`empresa`,`identificacao`,`apartamento`,`bloco`,DATE_FORMAT(`data_cadastro`, '%d%/%m/%Y% - %h:%i') as data_formatada, `saida` FROM contato ORDER BY idContato");
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
 
         //FUNÇÃO CADASTRA CONTATO NO BANCO DE DADOS
-        public function cadastrarContato($nome, $empresa, $identificacao, $apartamento, $bloco){
+        public function cadastrarContato($nome, $empresa, $identificacao, $apartamento, $bloco, $saida){
             
-            $cmd = $this->pdo->prepare("INSERT INTO contato (nome, empresa, identificacao, apartamento, bloco) VALUES (:n, :e, :i, :a, :b)");
+            $cmd = $this->pdo->prepare("INSERT INTO contato (nome, empresa, identificacao, apartamento, bloco, saida) VALUES (:n, :e, :i, :a, :b, :s)");
             $cmd->bindValue(":n", $nome);
             $cmd->bindValue(":e", $empresa);
             $cmd->bindValue(":i", $identificacao);
             $cmd->bindValue(":a", $apartamento);
             $cmd->bindValue(":b", $bloco);
+            $cmd->bindValue(":s", $saida);
                 
             $cmd->execute();
                 
             return true;            
         }
 
-        public function excluirContato($id){
-            $cmd = $this->pdo->prepare("DELETE FROM contato WHERE idContato = :id");
-            $cmd->bindValue(":id", $id);
-            $cmd->execute();
-        }
+     
 
         public function buscarDadosContato($id){
 
@@ -54,25 +51,23 @@
             return $res;
         }
 
-        public function atualizarDados($id, $nome, $sobrenome, $email, $telefone){
-            
-                $cmd = $this->pdo->prepare("UPDATE contato SET nome = :n, sobrenome = :s, email = :e, telefone = :t WHERE idContato = :id");
-                $cmd->bindValue(":id", $id);
-                $cmd->bindValue(":n", $nome);
-                $cmd->bindValue(":s", $sobrenome);
-                $cmd->bindValue(":e", $email);
-                $cmd->bindValue(":t", $telefone);                
-                
-                $cmd->execute();
+        public function saida($id, $nome, $empresa, $identificacao, $apartamento, $bloco, $saida){
+            $cmd = $this->pdo->prepare("UPDATE contato SET nome = :n, empresa = :e, identificacao = :i, apartamento = :a, bloco = :b, saida = :s WHERE idContato = :id");
 
-                return true;
-            
+            $cmd->bindValue(":id", $id);
+            $cmd->bindValue(":n", $nome);
+            $cmd->bindValue(":e", $empresa);
+            $cmd->bindValue(":i", $identificacao);
+            $cmd->bindValue(":a", $apartamento);
+            $cmd->bindValue(":b", $bloco);
+            $cmd->bindValue(":s", $saida);
+
+            $cmd->execute();
+
+            return true;
         }
 
-        
-
-        
-
+      
        
     }
    

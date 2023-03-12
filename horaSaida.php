@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <input class="input--style-4" type="hidden" class="form-control" id="nome" name="nome" value="<?php if (isset($res)) {echo $res['nome_aluno'];} ?>">
+                                        <input class="input--style-4" type="hidden" class="form-control" id="nome" name="nome" value="<?php if (isset($res)) {echo $res['nome'];} ?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <input class="input--style-4" type="hidden" class="form-control" id="empresa" name="empresa" value="<?php if (isset($res)) {echo $res['empresa'];} ?>">
@@ -81,7 +81,7 @@
                                 <div class="form-row">
                                     
                                     <div id="rg" class="form-group col-md-5">
-                                        <input class="input--style-4" type="hidden" class="form-control" id="identificacao" name = "identificacao" placeholder="Nº do Documento" value="<?php if (isset($res)) {echo $res['CPF'];} ?>">
+                                        <input class="input--style-4" type="hidden" class="form-control" id="identificacao" name = "identificacao" placeholder="Nº do Documento" value="<?php if (isset($res)) {echo $res['identificacao'];} ?>">
                                     </div>
                                     <div class="form-group col-md-2">
                                         <input class="input--style-4" type="hidden" class="form-control" id="inputZip" name="apartamento" value="<?php if (isset($res)) {echo $res['apartamento'];} ?>">

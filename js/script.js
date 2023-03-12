@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    
+  
     $('#dataTable').DataTable();
 
  
@@ -16,15 +16,14 @@ $(document).ready(function() {
         }
     });
 
-});
-
-
-$(function() {
-    $("#identificacao").autocomplete({
-        source: "retornaDocumento.php",
-        select: function( event, ui ) {
-            event.preventDefault();
-            $("#identificacao").val(ui.item.id);
-        }
+    $("input[name='identificacao']").blur(function () {
+        var $nome = $("input[name='nome']");
+        var identificacao = $(this).val();
+        
+        $.getJSON('proc_pesq_user.php', {identificacao},
+            function(retorno){
+                $nome.val(retorno.nome);
+            }
+        );        
     });
 });

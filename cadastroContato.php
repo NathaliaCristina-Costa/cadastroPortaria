@@ -21,6 +21,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     
 </head>
 
@@ -59,34 +60,31 @@
                             ?>
                             <form method="POST" autocomplete="on">
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" required>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="empresa">Empresa</label>
-                                        <input type="text" class="form-control" id="empresa" name="empresa" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-3">
+                                <div class="form-group col-md-3">
                                         <label for="inputState">Documento</label>
                                         <select id="documento" class="form-control" required>
-                                            <option></option>
+                                            <option>Escolha</option>
                                             <option >CPF</option>
                                             <option>Matrícula</option>
                                             <option>RG</option>
                                         </select>
                                     </div>
-                                    <div id="rg" class="form-group col-md-5">
+                                    <div id="rg" class="form-group col-md-4">
                                         <label for="registro">Identificação</label>
                                         <input type="text" class="form-control" id="identificacao" name = "identificacao" placeholder="Nº do Documento" required>
                                     </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Apto</label>
-                                        <input type="text" class="form-control" id="inputZip" name="apartamento" required>
+                                    <div class="form-group col-md-5">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" required>
                                     </div>
-                                    <div class="form-group col-md-2">
+                                </div>
+                                <div class="form-row">
+                                    
+                                    <div class="form-group col-md-3">
+                                        <label for="inputZip">Apto</label>
+                                        <input placeholder="Nº do Apto" type="text" class="form-control" id="inputZip" name="apartamento" required>
+                                    </div>
+                                    <div class="form-group col-md-3">
                                         <label for="inputState">Bloco</label>
                                         <select id="inputState" class="form-control" name = "bloco" required>
                                             <option selected>...</option>
@@ -94,11 +92,15 @@
                                             <option>2</option>
                                         </select>
                                     </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="empresa">Empresa</label>
+                                        <input type="text" class="form-control" id="empresa" name="empresa" required>
+                                    </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputZip">Saída</label>
-                                        <input type="time" class="form-control" id="inputZip" name="saida" disabled>
+                                    
+                                    <div class="form-group col-md-12">
+                                        <input type="hidden" class="form-control" id="inputZip" name="saida" disabled>
                                     </div>
                                 </div>
                                 <div class="d-flex bd-highlight mb-3">

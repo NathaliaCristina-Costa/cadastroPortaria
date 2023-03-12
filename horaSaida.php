@@ -65,35 +65,29 @@
                             }
                             ?>
                             <form method="POST" autocomplete="on">
-                            <div class="form-row">
+                            <div class="form-row MT-5">
                                     <div class="form-group col-md-12">
-                                        <label for="inputZip">Saída</label>
                                         <input type="time" class="form-control" id="inputZip" name="saida" value="<?php if (isset($res)) {echo $res['saida'];} ?>">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" value="<?php if (isset($res)) {echo $res['nome'];} ?>">
+                                        <input class="input--style-4" type="hidden" class="form-control" id="nome" name="nome" value="<?php if (isset($res)) {echo $res['nome_aluno'];} ?>">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="empresa">Empresa</label>
-                                        <input type="text" class="form-control" id="empresa" name="empresa" value="<?php if (isset($res)) {echo $res['empresa'];} ?>">
+                                        <input class="input--style-4" type="hidden" class="form-control" id="empresa" name="empresa" value="<?php if (isset($res)) {echo $res['empresa'];} ?>">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     
                                     <div id="rg" class="form-group col-md-5">
-                                        <label for="registro">Identificação</label>
-                                        <input type="text" class="form-control" id="identificacao" name = "identificacao" placeholder="Nº do Documento" value="<?php if (isset($res)) {echo $res['identificacao'];} ?>">
+                                        <input class="input--style-4" type="hidden" class="form-control" id="identificacao" name = "identificacao" placeholder="Nº do Documento" value="<?php if (isset($res)) {echo $res['CPF'];} ?>">
                                     </div>
                                     <div class="form-group col-md-2">
-                                        <label for="inputZip">Apto</label>
-                                        <input type="text" class="form-control" id="inputZip" name="apartamento" value="<?php if (isset($res)) {echo $res['apartamento'];} ?>">
+                                        <input class="input--style-4" type="hidden" class="form-control" id="inputZip" name="apartamento" value="<?php if (isset($res)) {echo $res['apartamento'];} ?>">
                                     </div>
                                     <div class="form-group col-md-2">
-                                        <label for="inputState">Bloco</label>
-                                        <select id="inputState" class="form-control" name = "bloco">
+                                        <select hidden class="input--style-4" id="inputState" class="form-control" name = "bloco">
                                             <option selected><?php if (isset($res)) {echo $res['bloco'];} ?>    </option>
                                             <option>1</option>
                                             <option>2</option>
